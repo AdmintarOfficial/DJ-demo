@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
-import os
+# import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-4ua29f(b1b=-is3c!)9_j!e56=h$!*%(q&e6li*hm)b5oqcce6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.58', '127.0.0.1', '45.141.26.136']
+ALLOWED_HOSTS = [
+    'xn--l3ccl5am9cxbn7iud9a.xn--o3cw4h',
+    'xn--42caq5h5cb6grc.xn--l3ccl5am9cxbn7iud9a.xn--o3cw4h',
+    'xn--42ca9bc6e9fucf2d.xn--l3ccl5am9cxbn7iud9a.xn--o3cw4h',
+ ]
 
 
 # Application definition
@@ -118,15 +122,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# STATIC_URL = 'static/'
-
-STATIC_URL = '/assets/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
-)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://xn--l3ccl5am9cxbn7iud9a.xn--o3cw4h',
+    'https://xn--42caq5h5cb6grc.xn--l3ccl5am9cxbn7iud9a.xn--o3cw4h',
+    'https://xn--42ca9bc6e9fucf2d.xn--l3ccl5am9cxbn7iud9a.xn--o3cw4h',
+]
