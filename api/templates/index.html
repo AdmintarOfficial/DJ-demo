@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>เช็คราคาไทยวัสดุ</title>
+    </head>
+    <body>
+
+        <center>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="search" placeholder="กรอก URL สินค้าที่ต้องการเช็คราคา" style="width:50%;height:30px;">
+                <input type="submit" value="ค้นหา" style="height:35px;">
+            </form>
+
+            <br>
+
+            {% if error %}
+                <p style="color:red;">{{ error }}</p>
+            {% endif %}
+
+            {% if price %}
+            <table border="1" width="55%">
+                <tr>
+                    <th width="80%">ชื่อสินค้า</th>
+                    <th width="20%">ราคา</th>
+                </tr>
+                <tr>
+                    <td>{{ title }}</td>
+                    <td>{{ price }}</td>
+                </tr>
+            </table>
+            {% endif %}
+
+        </center>
+
+    </body>
+</html>
